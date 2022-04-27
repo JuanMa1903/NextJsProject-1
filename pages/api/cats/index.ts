@@ -1,7 +1,7 @@
-import {IncomingMessage, ServerResponse} from 'http';
+import { IncomingMessage, ServerResponse } from "http";
 import DB from '@database';
 
-const AllCats = async (req: IncomingMessage, res: ServerResponse) => {
+const AllCats = async (req:IncomingMessage, res: ServerResponse) => {
   const db = new DB()
   const allEntries = await db.getAll()
   const lenght = allEntries.length
