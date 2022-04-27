@@ -1,0 +1,21 @@
+{
+  "name": "nextjsproject-1",
+  "version": "1.0.0",
+  "description": "ShopPage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next run dev",
+    "build": "next run build",
+    "start": "next run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "add": "^2.0.6",
+    "next": "^12.1.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}
