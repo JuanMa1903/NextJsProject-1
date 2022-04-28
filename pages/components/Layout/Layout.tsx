@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "@pages/components/Navbar/Navbar";
 
+
 type Props = {
   children?: React.ReactNode
 }
@@ -10,7 +11,12 @@ const Layout: React.FC<Props> = ({ children }) => {
     <div>
       <Navbar />
       {children}
-      <footer>This is the footer</footer>
+      <footer className="container">This is the footer</footer>
+
+      <style jsx>{`
+      .container{
+        background: salmon;
+      }`}</style>
     </div>
   );
 };

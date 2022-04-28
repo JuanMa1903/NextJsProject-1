@@ -1,6 +1,7 @@
 import { AppProps } from "next/app";
 import Layout from "@pages/components/Layout/Layout";
 
+
 function MyApp({ Component, pageProps }: AppProps) {
   // Providers Context/providers, theme, data
   //Layouts
