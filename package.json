@@ -2,7 +2,7 @@
   "name": "nextjsproject-1",
   "version": "1.0.0",
   "description": "ShopPage",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",

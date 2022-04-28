@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../pages/components/Navbar/Navbar";
-
-
+import Navbar from "./components/Navbar/Navbar";
 const HomePage = () => {
-  const [productList, setproductList] = useState<TProduct>([]);
+  const [productList, setproductList] = useState<TProduct[]>([]);
 
   useEffect(() => {
     window
@@ -18,9 +16,9 @@ const HomePage = () => {
     <div>
       <Navbar />
       <h1>Hola Platzi!!</h1>
-      {productList.map((product) => {
-        <div>{product.name}</div>;
-      })}
+      {productList.map((product) => (
+        <div>{product.name}</div>
+      ))}
     </div>
   );
 };
