@@ -1,5 +1,13 @@
 {
-  "/_document": "pages/_document.js",
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js"
+  "/_document": "pages/_document.js",
+  "/about": "pages/about.html",
+  "/api/Avo": "pages/api/Avo.js",
+  "/components/Layout/Layout": "pages/components/Layout/Layout.html",
+  "/components/Navbar/Navbar": "pages/components/Navbar/Navbar.html",
+  "/api/Avo/[id]": "pages/api/Avo/[id].js",
+  "/": "pages/index.html",
+  "/product/[id]": "pages/product/[id].html",
+  "/_error": "pages/_error.js",
+  "/404": "pages/404.html"
 }
