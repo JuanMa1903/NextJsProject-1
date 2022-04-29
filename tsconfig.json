@@ -3,7 +3,9 @@
     "baseUrl": ".",
     "paths": {
       "@database": ["database/db.ts"],
-      "@pages/components/*": ["pages/components/*"]
+      "@components/*": ["components/*"],
+      "@store/*":["store/*"],
+      "@cors": ["cors-middleware.ts"]
     },
     "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],

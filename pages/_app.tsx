@@ -1,16 +1,15 @@
 import { AppProps } from "next/app";
-import Layout from "@pages/components/Layout/Layout";
+import "semantic-ui-css/semantic.min.css";
+import "../global.css";
 
+import CartProvider from "@store/Cart";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  // Providers Context/providers, theme, data
-  //Layouts
-  //props adicionales
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <Layout>
+    <CartProvider>
       <Component {...pageProps} />
-    </Layout>
+    </CartProvider>
   );
-}
+};
 
 export default MyApp;
