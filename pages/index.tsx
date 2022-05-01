@@ -4,22 +4,21 @@ import KawaiiHeader from '@components/KawaiiHeader/KawaiiHeader'
 import ProductList from '@components/ProductList/ProductList'
 import fetch from "isomorphic-unfetch";
 
-export const getServerSideProps = async () => { 
-    const response = await fetch('/api/Avo')
-    const {data: ProductList}: TAPIAvoResponse = await response.json()
+export const getStaticProps = async () => { 
+    const response = await fetch('https://platzi-avo.vercel.aoo/api/avo')
+    const {data: productList}: TAPIAvoResponse = await response.json()
       }
   return{
     props:{
-      ProductList,
+      productList,
     }
   }
- }
 
-const HomePage = ( { ProductList: TProduct[]}) => {
+const HomePage = ({ productList: TProduct[] }) => {
   return (
     <Layout>
       <KawaiiHeader />
-      <ProductList products={ProductList} />
+      <ProductList products={productList} />
     </Layout>
   )
 }
