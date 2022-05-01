@@ -5,9 +5,9 @@ import ProductSummary from '@components/ProductSummary/ProductSummary'
 
 export const getStaticPaths = async () => {
   const response = await fetch("http://localhost:3000/api/Avo");
-  const { data: productList }: TAPIAvoResponse = await response.json();
+  const { data }: TAPIAvoResponse = await response.json();
 
-  const paths = productList.map(({ id }) => ({
+  const paths = data.map(({ id }) => ({
     params: {
       id
     }
