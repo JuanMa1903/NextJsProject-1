@@ -1,23 +1,38 @@
-import React, { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
-
+import React from 'react'
+import { GetStaticProps } from 'next'
 import Layout from '@components/Layout/Layout'
 import ProductSummary from '@components/ProductSummary/ProductSummary'
 
-const ProductPage = () => {
-  const { query } = useRouter()
-  const [product, setProduct] = useState<TProduct | null>(null)
+export const getStaticPaths = async () => {
+  const response = await fetch("http://localhost:3000/api/Avo");
+  const { data: productList }: TAPIAvoResponse = await response.json();
 
-  useEffect(() => {
-    if (query.id) {
-      window
-        .fetch(`/api/avo/${query.id}`)
-        .then((response) => response.json())
-        .then((data: TProduct) => {
-          setProduct(data)
-        })
+  const paths = productList.map(({ id }) => ({
+    params: {
+      id
     }
-  }, [query.id])
+  }))
+
+  return{
+    paths,
+    // incremental static generetion
+    // 404 for everythings else.
+    fallback: false
+  }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => { 
+  const id = params?.id as string
+  const response = await fetch(`https://platzi-avo.vercel.app/api/avo/${params.id}`)
+  const product: TProduct = await response.json()
+return{
+  props:{
+    product,
+    }
+  }
+}
+
+const ProductPage = ( {product} : {product: TProduct}) => {
 
   return (
     <Layout>
